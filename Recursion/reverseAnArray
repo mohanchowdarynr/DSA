@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+void arrSwap(int i,int j,int check[]){
+
+if(i >= j) return ;
+swap(check[i],check[j]);
+return arrSwap(i+1,j-1,check);
+// for(int k =0;k <= j;k++){
+//     cout << check[k];
+// }
+}
+
+
+int main(){
+
+    int list[] = {1,2,3,4,5};
+    int len = sizeof(list)/sizeof(list[0]);
+
+    arrSwap(0,len - 1,list);
+
+    for(int i=0;i< len;i++){
+        cout << list[i];
+    }
+}
